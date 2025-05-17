@@ -1,103 +1,138 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="max-w-6xl mx-auto">
+      <section className="text-center py-12 md:py-20">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">Vehicle NFT Registry</h1>
+        <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+          Track vehicle history and ownership with secure, tamper-proof NFTs on the XRP Ledger
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/create-nft"
+            className="rounded-lg bg-blue-600 text-white px-8 py-3 font-medium hover:bg-blue-700 transition-colors shadow-sm"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Create Vehicle NFT
+          </Link>
+          <Link
+            href="/lookup-nft"
+            className="rounded-lg border border-gray-300 bg-white text-gray-800 px-8 py-3 font-medium hover:bg-gray-50 transition-colors shadow-sm"
           >
-            Read our docs
-          </a>
+            Lookup Vehicle NFT
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      <section className="py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 text-center transition-all hover:shadow-md">
+          <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+            </svg>
+          </div>
+          <h2 className="text-xl font-semibold mb-2">Create NFTs</h2>
+          <p className="text-gray-600 mb-4">
+            Create digital representations of vehicles with all important details securely stored on the XRP Ledger.
+          </p>
+          <Link href="/create-nft" className="text-blue-600 hover:text-blue-800 font-medium">
+            Create NFT &rarr;
+          </Link>
+        </div>
+
+        <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 text-center transition-all hover:shadow-md">
+          <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+          </div>
+          <h2 className="text-xl font-semibold mb-2">View Details</h2>
+          <p className="text-gray-600 mb-4">
+            Look up any vehicle NFT by its token ID to view comprehensive vehicle information and ownership details.
+          </p>
+          <Link href="/lookup-nft" className="text-blue-600 hover:text-blue-800 font-medium">
+            Lookup NFT &rarr;
+          </Link>
+        </div>
+
+        <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 text-center transition-all hover:shadow-md">
+          <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </div>
+          <h2 className="text-xl font-semibold mb-2">Manage NFTs</h2>
+          <p className="text-gray-600 mb-4">
+            Use the dashboard to manage your wallet, view all your vehicle NFTs, and control their properties.
+          </p>
+          <Link href="/dashboard" className="text-blue-600 hover:text-blue-800 font-medium">
+            Open Dashboard &rarr;
+          </Link>
+        </div>
+      </section>
+
+      <section className="py-12 border-t">
+        <h2 className="text-2xl font-bold text-center mb-8">How It Works</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <h3 className="text-xl font-semibold mb-4">For Vehicle Owners</h3>
+            <ul className="space-y-4">
+              <li className="flex">
+                <span className="bg-blue-50 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center font-bold mr-3 flex-shrink-0">1</span>
+                <span>Create a wallet on the XRP Ledger Testnet</span>
+              </li>
+              <li className="flex">
+                <span className="bg-blue-50 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center font-bold mr-3 flex-shrink-0">2</span>
+                <span>Register your vehicle by creating an NFT with all relevant details</span>
+              </li>
+              <li className="flex">
+                <span className="bg-blue-50 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center font-bold mr-3 flex-shrink-0">3</span>
+                <span>Keep your vehicle information updated with each inspection</span>
+              </li>
+              <li className="flex">
+                <span className="bg-blue-50 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center font-bold mr-3 flex-shrink-0">4</span>
+                <span>Transfer ownership when selling the vehicle</span>
+              </li>
+            </ul>
+          </div>
+          <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <h3 className="text-xl font-semibold mb-4">For Buyers & Inspectors</h3>
+            <ul className="space-y-4">
+              <li className="flex">
+                <span className="bg-blue-50 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center font-bold mr-3 flex-shrink-0">1</span>
+                <span>Request the NFT ID from the vehicle owner</span>
+              </li>
+              <li className="flex">
+                <span className="bg-blue-50 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center font-bold mr-3 flex-shrink-0">2</span>
+                <span>Verify vehicle history, maintenance records, and mileage</span>
+              </li>
+              <li className="flex">
+                <span className="bg-blue-50 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center font-bold mr-3 flex-shrink-0">3</span>
+                <span>Confirm ownership through the transparent XRPL blockchain</span>
+              </li>
+              <li className="flex">
+                <span className="bg-blue-50 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center font-bold mr-3 flex-shrink-0">4</span>
+                <span>Trust that vehicle data cannot be falsified or tampered with</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 border-t text-center">
+        <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
+        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          Create your first vehicle NFT or explore the system by looking up existing NFTs on the XRP Ledger Testnet.
+        </p>
+        <Link
+          href="/dashboard"
+          className="rounded-lg bg-blue-600 text-white px-8 py-3 font-medium hover:bg-blue-700 transition-colors shadow-sm inline-block"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          Go to Dashboard
+        </Link>
+      </section>
     </div>
   );
 }
